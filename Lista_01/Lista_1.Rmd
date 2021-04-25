@@ -1,0 +1,26 @@
+---
+title: "Lista 1"
+author: "Guilherme Théo"
+date: "25/04/2021"
+output: html_document
+---
+Questão 2
+```{r}
+library(tidyverse)
+library(xtable)
+```
+Questão 3
+```{r}
+#i)
+bikes <- read_csv('Datasets/bikes.csv')
+#ii)
+view(bikes)
+#210 observações e 11 variáveis
+```
+Questão 4
+```{r}
+summary(bikes)
+```
+i) Maior temperatura máxima observada : 81 \n
+   Maior temperatura mínima observada : 66
+ii) Ponte com maior média de bicicletas : Williamsburg Bridge
