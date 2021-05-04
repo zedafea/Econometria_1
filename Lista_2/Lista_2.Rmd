@@ -1,0 +1,83 @@
+---
+title: "Lista_2"
+author: "Guilherme Théo"
+date: "04/05/2021"
+output: html_document
+---
+
+Questão 1
+Funções
+```{r}
+abs(-200)
+sqrt(64)
+exp(5)
+log(10)
+log(20,4)
+round(7.54344423)
+factorial(4)
+seq(10,1,-2)
+
+```
+Operadores Lógicos
+```{r}
+2==2
+2<5
+2<=2
+2>4
+2>=8
+4!=98
+TRUE&FALSE
+2<5&10>70
+TRUE|FALSE
+2<5|10>70
+
+```
+Questão 2
+```{r}
+curve(abs(x),from = -4,to = 2)
+curve(sqrt(x),from = 6,to = 43)
+curve(exp(x),from = -23,to = 64)
+curve(log(x),from = -32,to = 46)
+curve(log(x,2),from = -12,to = 67)
+curve(round(x,3),from = -5.5462,to = 6.34113)
+curve(factorial(x), from = 1,to = 6)
+curve(seq(x),from = 2,to = 17)
+```
+Questão 3
+```{r}
+v1<-c(2,5,6,42,6,73,2)
+v2<-c("r","ewr","bfdsv","ewfq","asd")
+v3<-c(TRUE,FALSE,FALSE)
+v4<-c(5i,6i,2i,3i,4i)
+v5<-as.factor(c(2011,2022,2033,2044,2055))
+class(v1)
+class(v2)
+class(v3)
+class(v4)
+class(v5)
+```
+Questão 4
+```{r}
+library(tidyverse)
+library(xtable)
+library(readxl)
+
+dados<-read_excel("C:/Users/guilh/Documents/Econometria_1/Lista_2/pop_estimada.xlsx")
+
+view(dados)
+```
+Questão 5
+```{r}
+class(dados)
+dim(dados)
+ncol(dados)
+nrow(dados)
+names(dados)
+head(dados)
+str(dados)
+summary(dados)
+```
+
+
+
+
