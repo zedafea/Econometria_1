@@ -1,0 +1,22 @@
+---
+title: "Exerc_06_05"
+author: "Théo"
+date: "06/05/2021"
+output: html_document
+---
+Distribuição chi com 4 graus de liberdade
+```{r}
+set.seed(1)
+v1 = rchisq(10,4)
+mean(v1)
+var(v1)
+```
+```{r}
+set.seed(1)
+v2 = rchisq(100000,4)
+mean(v2)
+var(v2)
+```
+No caso 2 os valores se aproximam mais dos valores teóricos devido ao aumento no n
+
+
