@@ -1,0 +1,46 @@
+---
+title: "Lista_3"
+author: "Théo"
+date: "12/05/2021"
+output: html_document
+---
+Questão 1
+```{r}
+library(dplyr)
+library(infer)
+qnorm(0.18,73,8)
+pnorm(70,75,5)
+pnorm(85,75,5,lower.tail = FALSE)
+pnorm(1,0,1,lower.tail = FALSE)
+pt(2.3,df = 5)
+qt(0.25,df = 25)
+```
+Questão 2
+```{r}
+load(url('http://s3.amazonaws.com/assets.datacamp.com/course/dasi/ames.RData'))
+hist(ames$Gr.Liv.Area,breaks = 50)
+summary(ames$Gr.Liv.Area)
+#Alternativas A e B erradas
+```
+Questão 3
+```{r}
+am_50 <- sample(ames$Gr.Liv.Area,50)
+am_100 <- sample(ames$Gr.Liv.Area,100)
+am_1000 <- sample(ames$Gr.Liv.Area,1000)
+hist(am_50)
+hist(am_100)
+hist(am_1000)
+#A amostra com 1000 observações retorna a média mais aproximada
+```
+Questão 4
+```{r}
+am <- rep_sample_n(ames,size =  50, reps = 15000)
+med_am <- aggregate(am$SalePrice, list(am$replicate), mean)
+hist(med_am$x)
+```
+Questão 5
+```{r}
+pnorm(185000, mean = mean(am$SalePrice), sd = sd(am$SalePrice)) - pnorm(165000, mean = mean(am$SalePrice), sd = sd(am$SalePrice))
+```
+
+
