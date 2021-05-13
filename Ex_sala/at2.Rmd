@@ -1,0 +1,44 @@
+---
+title: "At4"
+author: "Théo"
+date: "13/05/2021"
+output: html_document
+---
+
+Questão 1
+```{r}
+v1 <- c(4,2,8,7)
+v2 <- c(9,6,5,6)
+
+m1 <- matrix(data = c(v1,v2), nrow = 2, ncol = 2)
+m2 <- diag(x = c(2,2))
+```
+Questão 2 
+```{r}
+v1+v2
+v1-v2
+sum(v1*v2)
+v1%*%v2
+length(v1)
+length(v2)
+max(v1)
+max(v2)
+min(v1)
+min(v2)
+sum(v1)
+sum(v2)
+prod(v1)
+prod(v2)
+sqrt(v1)
+sqrt(v2)
+```
+Questão 3
+```{r}
+m1%*%m2
+det(m1)
+det(m2)
+solve(m1)
+solve(m2)
+eigen(m1)
+eigen(m2)
+```
