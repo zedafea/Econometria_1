@@ -1,0 +1,46 @@
+---
+title: "Lista_04"
+author: "Guilherme Théo"
+date: "19/05/2021"
+output: html_document
+---
+
+Questão 1 
+```{r}
+v1 = c(3,5,6,9)
+v2 = c(2,5,3,8)
+m1 = cbind(c(3,5), c(8,9))
+m2 = cbind(c(0,2), c(1,21), c(0,10))
+m3 = diag(2,2,5)
+m4 = cbind(c(3,8,7,5), c(1,5,4,8), c(1,5,9,8), c(4,2,1,9))
+```
+Questão 2
+```{r}
+length(v1)
+length(v2)
+max(v1)
+max(v2)
+min(v1)
+min(v2)
+sum(v1)
+sum(v2)
+prod(v1)
+prod(v2)
+sqrt(v1)
+sqrt(v2)
+```
+Questão 3
+```{r}
+m4%*%v1
+m4*v1
+```
+Questão 4
+```{r}
+m5 <- cbind(m3[c(2,1)], m1[,1])
+det(m5)
+solve(m5)
+t(m5)
+sum(diag(m5))
+eigen(m5)
+```
+

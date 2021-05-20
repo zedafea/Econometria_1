@@ -42,5 +42,55 @@ Questão 5
 ```{r}
 pnorm(185000, mean = mean(am$SalePrice), sd = sd(am$SalePrice)) - pnorm(165000, mean = mean(am$SalePrice), sd = sd(am$SalePrice))
 ```
+Questão 6
+```{r}
+curve(dnorm(x, mean = 90, sd=100),
+      col = "red",
+      xlim = c(-500,500),
+      ylim = c(0,0.005))
+
+curve(dnorm(x, mean = 90, sd=100),
+      col = "red",
+      xlim = c(-500,500),
+      ylim = c(0,0.005))
+
+
+curve(dnorm(x, mean = 90, sd=80),
+      col = "blue",
+      xlim = c(-500,500),
+      ylim = c(0,0.005),
+      add = TRUE)
+
+curve(dnorm(x, mean = 75, sd=100),
+      col = "blue",
+      xlim = c(-500,500),
+      ylim = c(0,0.005),
+      add = TRUE)
+
+curve(dchisq(x, df=1),
+      col = "red",
+      xlim = c(0,10),
+      ylim = c(0,1))
+
+curve(dchisq(x, df=2),
+      col = "blue",
+      xlim = c(0,10),
+      ylim = c(0,1),
+      add = TRUE)
+
+curve(dchisq(x, df=5),
+      col = "green",
+      xlim = c(0,10),
+      ylim = c(0,1),
+      add = TRUE)
+
+t1 = rf(100000, df1 = 10, df2 = 20)
+x =  t1
+
+hist(t1, breaks = 100)
+
+curve(df(x, df1 = 10, df2 = 20),
+      col = "blue")
+```
 
 
