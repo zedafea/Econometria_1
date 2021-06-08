@@ -1,17 +1,27 @@
+---
+title: "Lista_05"
+author: "Th√©o"
+date: "08/06/2021"
+output: html_document
+---
+1)
+```{r}
 library(wooldridge)
 
-1)
 X <- c(2,4,6,8,7,12,11,10,9,8,6,4)
 Y <- c(800,1160,1580,2010,1890,2600,2070,1890,1830,1740,1380,1060)
 
 #i
 beta1 <- cov(X,Y)/var(X)
 beta0 <- mean(Y) - beta1*mean(X)
+beta1
+beta0
 
 #ii
 y_hat <- beta0 + beta1*X
 df <- as.data.frame(cbind(X,Y,y_hat,Y-y_hat))
 sqr <- sum(df$V4^2)
+sqr
 
 #iii
 #R^2 = sqe/sqt, onde sqe = somatorio((y_hat - y_mean)^2) e sqt = somatorio((y - y_mean)^2)
@@ -25,9 +35,11 @@ var_beta1 = sqr/10
 ep = sqrt(var_beta1)/sqrt(sum((X - mean(X))^2))
 #t test com 10 gl
 (beta1 - 0)/ep
-#como 9.41 > do que 2.22 (pela tabela) beta1 È significante
+#como 9.41 > do que 2.22 (pela tabela) beta1 √© significante
+```
 
 2)
+```{r}
 df <- discrim
 #i
 mean(df$prpblck,na.rm=TRUE)
@@ -39,18 +51,18 @@ sqrt(var(df$income,na.rm=TRUE))
 options(scipen = 999)
 model1 <- lm(psoda ~ prpblck + income,data = df)
 summary(model1)
-#EquaÁ„o
-psoda = 0.9563 + 0.1150*prpblck + 0.00*income
+#Equa√ß√£o
+#psoda = 0.9563 + 0.1150*prpblck + 0.00*income
 #Tamanho da amostra
-n = 410 (9 NA)
+#n = 410 (9 'NA')
 #R quadrado
 r = 0.0861
-#O resultado n„o È economicamente grande, um aumento de uma unidade em prpblck, i.e, 100% => aumento de 0.11 dÛlares no preÁo
+#O resultado n√£o √© economicamente grande, um aumento de uma unidade em prpblck, i.e, 100% => aumento de 0.11 d√≥lares no pre√ßo
 
 #iii
 model2 <- lm(psoda ~ prpblck,data = df)
 summary(model2)
-#O efeito da discrinaÁ„o È menor do que quando controlamos pela renda
+#O efeito da discrimina√ß√£o √© menor do que quando controlamos pela renda
 
 #iv
 model3 <- lm(lpsoda ~ lincome + prpblck, data = df)
@@ -65,7 +77,10 @@ summary(model4)
 
 #vi
 cor(df$lincome,df$prppov,use='complete.obs')
-#Dentro do esperado, renda mÈdia e pobreza fortemente correlacionadas negativamente
+#Dentro do esperado, renda m√©dia e pobreza fortemente correlacionadas negativamente
 
 #vii
-#… uma boa discuss„o, temos os prÛs de se adicionar mais informaÁ„o, pode ser que existam locais com alta renda mÈdia e alta pobreza, logo seria interessante controlar por ambas as vari·veis. Entretanto h· tambÈm que se ficar atento para a multicolinearidade, que afeta o desvio padr„o das nossas estimativas que podem consequentemente perder signific‚ncia.
+#√â uma boa discuss√£o, temos os pr√≥s de se adicionar mais informa√ß√£o, pode ser que existam locais com alta renda m√©dia e alta pobreza (alta desigualdade), logo seria interessante controlar por ambas as vari√°veis. Entretanto h√° tamb√©m que se ficar atento para a multicolinearidade, que afeta o desvio padr√£o das nossas estimativas que podem consequentemente perder signific√¢ncia.
+
+```
+
