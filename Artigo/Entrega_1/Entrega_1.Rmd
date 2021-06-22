@@ -1,0 +1,23 @@
+---
+title: "Artigo - 1º Entrega"
+author: "Grupo B1"
+date: "21/06/2021"
+output: html_document
+---
+```{r}
+library(readxl)
+options(scipen = 999)
+data <- read_excel("C:/Users/guilh/Documents/Datasets/base-crimes-CO.xlsx")
+```
+```{r}
+summary(data)
+numericas <- unlist(lapply(data, is.numeric))
+apply(data[,numericas],MARGIN=2,FUN=var)
+apply(data[,numericas],MARGIN=2,FUN=sd)
+```
+```{r}
+cor(data[,numericas],use = "complete.obs")
+cov(data[,numericas],use = "complete.obs")
+```
+
+
